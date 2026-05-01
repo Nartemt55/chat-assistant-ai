@@ -1,6 +1,6 @@
 # Chat Assistant AI
 
-Корпоративный AI-ассистент на Spring Boot с RAG.
+Корпоративный AI-ассистент на Spring Boot
 
 ## Технологии
 
@@ -16,7 +16,7 @@
 - Java 21
 - Maven
 
-## Быстрый старт
+## Старт
 
 ### 1. Клонируйте репозиторий
 
@@ -54,17 +54,6 @@ docker exec -it ai_ollama ollama pull qwen2.5:3b
 docker exec -it ai_ollama ollama pull nomic-embed-text
 ```
 
-### 5. Запустите приложение
-
-**Через IDEA:**
-- Откройте `ChatAssistentAiApplication.java`
-- Нажмите зелёную стрелку ▶️
-
-**Или через Maven:**
-```bash
-mvn spring-boot:run
-```
-
 ## Проверка работы
 
 ```bash
@@ -78,26 +67,4 @@ docker exec -it ai_postgres psql -U admin -d ragdb -c "SELECT 1"
 docker exec -it ai_ollama ollama list
 ```
 
-## Безопасность
 
-- Файл `application.yml` с реальными паролями в `.gitignore`
-- В репозитории только `application-template.yml` с заглушками
-
-## Устранение проблем
-
-### Ошибка подключения к PostgreSQL
-
-```bash
-docker-compose down -v
-docker-compose up -d
-```
-
-### Ошибка сети в Maven
-
-```bash
-mvn spring-boot:run -Djava.net.preferIPv4Stack=true
-```
-
-## Лицензия
-
-MIT
